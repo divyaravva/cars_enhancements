@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="style_for_heading">Cars</h1>
+
+<div class="text_align_center">
+   <span class="margin_left"><%= image_tag "pdf.jpg", :onclick=>"generate_pdf()", :class => "pdf_styles" %></span>
+   <span><%= image_tag "csv.jpg", :onclick=>"generate_excel()", :class => "pdf_styles" %></span>
+   <span style="margin-left: 20px;"><%= link_to 'New Car', new_car_path %></span>
+</div>
+
+<table class="table table-striped table-bordered custom_css_for_tbl margin_top" align="center">
+    <%= render partial: "header_data" %>
+  
+    <tbody>
+        <%= render partial: "show_cars_data", :locals => {all_cars_data: @cars}%>
+    </tbody>
+</table>
+<br>
+
+
+<script type="text/javascript">
+  function generate_pdf()
+  {
+      window.location="/cars/generate_pdf"
+  }
+
+  function generate_excel()
+  {
+      window.location="/cars/generate_excel"
+  }
+
+  $('table').tablesorter({
+      widgets        : ['zebra', 'columns'],
+      usNumberFormat : false,
+      emptyTo        : 'none',
+      sortRestart    : true
+  });
+</script>
+

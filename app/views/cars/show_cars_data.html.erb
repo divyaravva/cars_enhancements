@@ -1,0 +1,32 @@
+<table style="width: 1000px">
+	<tr>
+		<td>Model</td>
+		<td>Make</td>
+		<td>Year</td>
+		<td>Comments</td>
+	</tr>
+
+	<%unless @all_cars.blank?%>
+		<%@all_cars.all.each do |each_car|%>
+		<tr>
+			<td><%= each_car.model%></td>
+			<td><%= each_car.make%></td>
+			<td><%= each_car.year%></td>
+			<td><%= each_car.comments.map{|e_comment| e_comment.commnet_body}.join(", ")%></td>
+		</tr>
+		<%end%>
+	<% else%>
+		<tr><td colspan="4" style="text-align: center;">No data</td></tr>
+	<%end%>
+</table>
+
+
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 15px;
+}
+</style>

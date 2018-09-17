@@ -1,0 +1,16 @@
+<% unless all_cars_data.blank?%>
+    <% all_cars_data.each do |car| %>
+        <tr>
+                <td><%= car.model %></td>
+                <td><%= car.make %></td>
+                <td><%= car.year %></td>
+                <td><%= car.comments.map{|e_comment| e_comment.commnet_body}.join(", ")%></td>
+                <td><%= link_to 'Show', car %></td>
+                <td><%= link_to 'Edit', edit_car_path(car) %></td>
+                <td><%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <td><%= link_to 'Comment', new_comment_path(:car_id => car.id) %></td>
+        </tr>
+    <% end %>
+<% else %>
+    <tr><td colspan="5" class="text_align_center;">No data to show</td></tr>
+<%end%>
