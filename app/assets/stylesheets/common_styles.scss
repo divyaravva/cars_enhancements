@@ -1,11 +1,8 @@
- .text_align_center
+  .table_row_css
   {
-    	text-align: center;
-  }
-
-  .custom_css_for_tbl
-  {
-    	width: 800px;
+      background-color: grey;
+      color: white;
+      cursor: pointer;
   }
 
   .pdf_styles
@@ -32,4 +29,57 @@
   a:hover 
   {
       background-color: white;
+  }
+
+  .fields_css
+  {
+      text-align: right;
+      vertical-align: middle !important;
+      padding-top: 15px !important;
+      font-size: 15px !important;
+  }
+
+  .form-control
+  {
+      width: 50% !important;
+  }
+
+  .custom_css_for_tbl
+  {
+      width: 50%;
+  }
+
+  .table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td
+  {
+      vertical-align: middle;
+  }
+
+  .navbar 
+  {
+      margin-bottom: 0;
+      border-radius: 0;
+  }
+    
+  .row.content {height: 855px}
+    
+  .sidenav 
+  {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+  }
+    
+  footer 
+  {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+  }
+    
+  @media screen and (max-width: 767px) {
+    .sidenav {
+      height: auto;
+      padding: 15px;
+    }
+    .row.content {height:auto;} 
   }

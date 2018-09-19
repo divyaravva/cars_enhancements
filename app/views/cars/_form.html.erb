@@ -12,31 +12,27 @@
   <% end %>
 
 
-  <table align="center">
+  <table class="table table-striped table-bordered table-hover custom_css_for_tbl" align="center">
       <tr>
-          <td><%= form.label :model %><span>:</span></td>
+          <td class="fields_css"><%= form.label :model %><span>:</span></td>
           <td><%= form.text_field :model,  :class=>"form-control", :placeholder => "Enter Model"%></td>
       </tr>
 
       <tr>
-          <td><%= form.label :make %><span>:</span></td>
+          <td class="fields_css"><%= form.label :make %><span>:</span></td>
           <td><%= form.text_field :make,  :class=>"form-control", :placeholder => "Enter Make"%></td>
       </tr>
       
       <tr>
-          <td><%= form.label :year %><span>:</span></td>
+          <td class="fields_css"><%= form.label :year %><span>:</span></td>
           <td><%= form.number_field :year,  :class=>"form-control", :placeholder => "Enter Year"%></td>
-      </tr>
-
-      <tr class="actions">
-          <td></td>
-          <td style="padding-top: 10px;"><%= form.submit %>
-            <%= link_to 'Cars', cars_path %>|
-            <%= link_to 'Show', @car %>
-          </td>
       </tr>
   </table>
 
+  <div class="text-center">
+        <%= form.submit class: "btn btn-primary" %>
+        <%= link_to 'Show Cars', cars_path, class: "btn btn-primary" %>
+  </div>
 <% end %>
 
 
