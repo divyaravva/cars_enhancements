@@ -1,0 +1,10 @@
+<%= image_tag "weather.jpg"%>
+<span class="weather_css">
+		<% weather_details = Car.show_weather_based_on_city%>
+		<% unless weather_details.blank? %>
+			<span>Temperature: <%= weather_details["main"]['temp']%>&#8451;</span><br>
+			<span>City: <%= weather_details["name"]%></span><br>
+			<span>Country: <%= weather_details["sys"]["country"]%></span><br>
+			<span>Speed: <%= weather_details["wind"]["speed"]%></span><br>
+		<%end%>
+</span>
